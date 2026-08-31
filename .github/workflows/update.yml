@@ -19,6 +19,7 @@ jobs:
       - run: python update.py
       - name: Commit changed lists
         run: |
+          git add drop_v4.txt drop_v6.txt
           if git diff --quiet -- drop_v4.txt drop_v6.txt; then
             exit 0
           fi
